@@ -341,9 +341,9 @@ void studentDashboard() {
         switch (choice) {
             case 1: viewProfile(); pressEnterToContinue(); break;
             case 2: viewMarks(); pressEnterToContinue(); break;
-            case 3: markAttendance(); pressEnterToContinue(); break;
+            case 3: markAttendance(); saveToFile(); pressEnterToContinue(); break;
             case 4: viewTimetable(); pressEnterToContinue(); break;
-            case 5: feePayment(); pressEnterToContinue(); break;
+            case 5: feePayment(); saveToFile(); pressEnterToContinue(); break;
             case 6:
                 saveToFile();
                 loggedInIndex = -1;
