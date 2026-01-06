@@ -162,7 +162,7 @@ void viewProfile() {
     cout << "Roll Number: " << students[loggedInIndex].rollNo << endl;
 
     for (int i = 0; i < 3; i++) {
-        cout << students[loggedInIndex].courses[i].courseName
+        cout << students[loggedInIndex].courses[i].courseName //multiple struct use
              << " Absents: "
              << students[loggedInIndex].courses[i].absentCount << endl;
     }
@@ -205,7 +205,7 @@ void markAttendance() {
         return;
     }
 
-    Course &c = students[loggedInIndex].courses[courseChoice - 1];
+    Course &c = students[loggedInIndex].courses[courseChoice - 1]; //-1 as on menu we have given options 1,2,3
 
     if (c.absentCount > 8) {
         SetConsoleTextAttribute(hConsole, 12);
@@ -389,7 +389,7 @@ void loadFromFile() {
     ifstream file("data.txt");
     if (!file) return;
 
-    students.clear();   // IMPORTANT
+    students.clear();   //This line empties the students vector before loading data from the file. So the data does not get duplicated.
 
     while (true) {
         Student s;
@@ -411,11 +411,10 @@ void loadFromFile() {
             file >> s.courses[c].absentCount;
         }
 
-        // MUST read these (they were written!)
         file >> s.totalFee;
         file >> s.paidFee;
 
-        // Restore course metadata
+
         s.courses[0].courseName = "Maths";
         s.courses[1].courseName = "Physics";
         s.courses[2].courseName = "Programming";
