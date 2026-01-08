@@ -1,5 +1,6 @@
 //Implements (defines) everything declared in functions.h
 //g++ main.cpp functions.cpp -o main
+// All the functions declared in function.h have been defined here
 
 
 #include <iostream>
