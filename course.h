@@ -11,5 +11,4 @@ struct Course {
     int absentCount;
 };
 
-
 #endif

@@ -5,13 +5,16 @@
 
 #include <vector>
 #include "student.h"
+#include "semester.h"
+
+//course.h is included in semester.h
 
 using namespace std;
 
 extern vector<Student> students;  //extern tells the compiler that the variable is defined elsewhere
 extern int loggedInIndex;
 
-float calculateGPA(int marks[]);
+float calculateGPA(const vector<int>& marks);
 void registerStudent();
 bool loginStudent();
 void studentDashboard();
@@ -20,6 +23,8 @@ void viewMarks();
 void markAttendance();
 void feePayment();
 void viewTimetable();
+void changeSemester();
+void viewSemesterReport();
 void pressEnterToContinue();
 
 void saveToFile();

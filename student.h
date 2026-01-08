@@ -5,7 +5,10 @@
 #define STUDENT_H
 
 #include <string>
-#include "course.h"
+#include <vector>
+
+// Forward declaration as we have used it in sStudent as well
+struct Semester;
 
 using namespace std;
 
@@ -13,13 +16,11 @@ struct Student {
     string rollNo;
     string password;
     string name;
-    int marks[3];
 
-    Course courses[3];
-    
-    float gpa;
+    vector<Semester> semesters;
+    int currentSemesterIndex;
+
     bool isDropped;
-
     int totalFee;
     int paidFee;
 };
