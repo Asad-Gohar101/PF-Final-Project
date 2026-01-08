@@ -26,7 +26,7 @@ float calculateGPA(const vector<int>& marks) { //const will protect the marks fr
     for (int m : marks)
         total += m;
 
-    if (marks.empty()) return 0.0f; // if no marks are entered 
+    if (marks.empty()) return 0.0f; // if no marks are entered just as a safety so program will not crash
 
     return (total / (float)marks.size()) / 25;
 }
@@ -230,7 +230,7 @@ void viewMarks() {
 }
 
 
-// Mark Attendance (COURSE-WISE) — SEMESTER 
+// Mark Attendance (Course wise) — Semester
 void markAttendance() {
 
     Student &s = students[loggedInIndex];
@@ -246,6 +246,7 @@ void markAttendance() {
         cout << i + 1 << ". " << sem.courses[i].courseName << endl;
     }
 
+    cout << endl;
     cout << "\nEnter choice: ";
     cin >> courseChoice;
 
